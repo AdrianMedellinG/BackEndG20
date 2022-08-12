@@ -77,34 +77,28 @@ fs.readdir(directorio, (err, data) => {
 });
 */
 
-const directorio = "directorio1"
-
-
-
-fs.readdir(directorio, { withFileTypes: true }, (error, files) => {
-    const subdirecotires = files
-        .filter((item) => item.isDirectory())
-        .map((item) => item.name);
-    //console.log(subdirecotires);
-    if(subdirecotires.length > 0){
-        subdirecotires.forEach((cv) => {
-            fs.unlink(directorio+"/"+subdirecotires+"/"+cv, (err) => {
-                console.log(`${directorio}/${subdirecotires}/${cv}`)
-                if (err) {
-                    console.log(`Se elimino el archivo ${cv}`.red)
-                }
-             
-            });
-            console.log(`Se eliminaron todo los archivos de la carpeta ${cv}`.red)
-        });
-       
+/*//! Practica de eliminar archivos y carpoetas dentro de una carpeta
+let folder = "directorio1"
+fs.readdir(folder,"utf-8",(err,files)=>{
+    if(err)throw err;
+    if(files.length == 0){
+        console.log("No hay archivos");
+        return;
     }
+    files.forEach((file)=>{
+        if(fs.statSync(`${folder}/${file}`).isDirectory()){
+            fs.rm(`${folder}/${file}`,{recursive:true,force:true},(err)=>{
+                if(err)throw err;
+                console.log(`Directorio ${file} eliminado`);
+            });
+       }
+        else{
+              fs.unlink(`${folder}/${file}`,(err)=>{
+              if(err)throw err;
+              console.log(`Archivob ${file} eliminado`);
+            });
+        }
+    });
 
- })
-
-// fs.readdir(directorio, (err, data) => {
-//     if (err) throw err;
-//     console.log(data);
-
-
-// })
+});
+*/
