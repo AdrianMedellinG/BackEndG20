@@ -142,7 +142,7 @@ const hacerPastel = (recetaSeHaLeido) => {
    
     setTimeout(() => {
         // Voy a leer la receta
-        recetaSeHaLeido.recetaLeida = true;
+        recetaSeHaLeido.recetaLeida = false;
 
         // Si no se leyo la receta, lanzar un error
         if (!recetaSeHaLeido.recetaLeida) {
