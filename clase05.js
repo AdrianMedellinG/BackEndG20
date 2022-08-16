@@ -107,17 +107,65 @@ const app = express()
 
 
 app.get("/",(request, response)=>{
-    response.write("Hola, bienvenido al get de Home")
+    response.write("Hola, bienvenido al GET de Home")
     response.end()
 
 })
+
 
 app.get("/profile",(request, response)=>{
     response.write("Hola, bienvenido al get de PROFILE")
     response.end()
 
 })
-   
+
+app.post("/",(request, response)=>{
+    response.write("Hola, bienvenido al POST de Home")
+    response.end()
+
+})
+
+app.post("/profile",(request, response)=>{
+    response.write("Hola, bienvenido al POST de PROFILE")
+    response.end()
+
+})
+
+app.put("/",(request, response)=>{
+    response.write("Hola, bienvenido al PUT de Home")
+    response.end()
+
+})
+
+app.put("/profile",(request, response)=>{
+    response.write("Hola, bienvenido al PUT de PROFILE")
+    response.end()
+
+})
+
+app.patch("/",(request, response)=>{
+    response.write("Hola, bienvenido al DELETE de Home")
+    response.end()
+
+})
+
+app.patch("/profile",(request, response)=>{
+    response.write("Hola, bienvenido al patch de PROFILE")
+    response.end()
+
+})
+
+app.delete("/",(request, response)=>{
+    response.write("Hola, bienvenido al DELETE de Home")
+    response.end()
+
+})
+
+app.delete("/profile",(request, response)=>{
+    response.write("Hola, bienvenido al DELETE de PROFILE")
+    response.end()
+
+})
 
 app.listen(4040, ()=>{
     console.log("Server Listening with EXPRESS")
